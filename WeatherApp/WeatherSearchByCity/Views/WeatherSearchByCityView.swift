@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WeatherSearchByCityView: View {
     @State var searchText = ""
     @ObservedObject var viewModel = WeatherViewModel(service: WeatherService())
     var body: some View {
@@ -70,8 +70,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WeatherSearchByCityView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WeatherSearchByCityView()
     }
 }
