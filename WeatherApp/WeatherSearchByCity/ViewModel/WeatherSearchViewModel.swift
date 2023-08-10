@@ -49,6 +49,12 @@ final class WeatherViewModel: ObservableObject {
                 if !cityList.contains(weatherByLatLonResponse.name){
                     cityList.insert(weatherByLatLonResponse.name)
                     self.weatherList.insert(WeatherInfo(model: weatherByLatLonResponse), at: 0)
+                } else {
+                    if let index = weatherList.firstIndex(where: {$0.name == weatherByLatLonResponse.name }){
+                        weatherList.remove(at: index)
+                        weatherList.insert(WeatherInfo(model: weatherByLatLonResponse), at: 0)
+                    }
+                        
                 }
             } catch {
                 if let networkError = error as? NetworkError {
