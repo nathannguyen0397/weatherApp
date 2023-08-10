@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 //Singleton Location Manager
 //Requirement: add Privacy - Location When In Use Usage Description in target info
-
+//NSObject is for delegate pattern 
 @MainActor
 class LocationManager: NSObject, ObservableObject{
     //Access to Long/lat
@@ -34,63 +34,9 @@ extension LocationManager: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return} //get the last update(current location)
         self.location = location
-        //create region around the cocation
+        //create region around the location(use for map for futher implementation)
         self.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
     }
 }
 
 
-
-
-
-
-
-
-
-
-//class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate{
-//    var locationManager: CLLocationManager?
-//    @Published var location: CLLocation?
-//
-//
-//    func checkIfLocationServicesIsEnabled(){
-//        if CLLocationManager.locationServicesEnabled(){
-//            locationManager = CLLocationManager()
-//            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-//            checkLocationAuthorization()
-//            locationManager!.delegate = self
-//        } else {
-//            print("Show an alert letting them know this is off and go turn it on")
-//        }
-//    }
-//
-//    func checkLocationAuthorization() {
-//        guard let locationManager = locationManager else {return}
-//
-//        switch locationManager.authorizationStatus{
-//
-//        case .notDetermined: //ask for location permission
-//            locationManager.requestWhenInUseAuthorization()
-//        case .restricted:
-//            print("Your location is restricted")
-//        case .denied:
-//            print("Your location request is denied. Change it in setting")
-//        case .authorizedAlways, .authorizedWhenInUse:
-//            break
-//        @unknown default:
-//            break
-//        }
-//    }
-//
-////    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-////        checkLocationAuthorization()
-////    }
-//
-//}
-//
-//extension LocationManager{
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.last else {return}
-//        self.location = location
-//    }
-//}
