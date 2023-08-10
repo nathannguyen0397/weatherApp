@@ -9,7 +9,8 @@ import SwiftUI
 
 struct WeatherSearchByCityView: View {
     @State var searchText = ""
-    @ObservedObject var viewModel = WeatherViewModel(service: WeatherService())
+    @StateObject var viewModel = WeatherViewModel(service: WeatherService())
+    @StateObject var locationManager = LocationManager()
     var body: some View {
         NavigationStack {
             ZStack {
@@ -47,11 +48,13 @@ struct WeatherSearchByCityView: View {
                 
                 //Navigation Button
                 Button(action: {
-                    print("button clicked")
-//                    #error("Working on this")
-                    LocationManager.shared.getLocation { (lon, lat) in
-                        print("Longitude: \(lon), Latitude: \(lat)")
-                    }
+                    print("Location")
+                    viewModel.fetchUserWeather(lat: locationManager.location?.coordinate.latitude ?? 0.0, lon: locationManager.location?.coordinate.longitude ?? 0.0)
+//                    DispatchQueue.global().async {
+//                        locationViewModel.checkIfLocationServicesIsEnabled()
+//                    }
+//                    
+//                    print(locationViewModel.location)
                 }) {
                     Image(systemName: "location.circle")
                         .resizable()

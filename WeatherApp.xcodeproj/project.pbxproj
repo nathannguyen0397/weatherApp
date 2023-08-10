@@ -17,6 +17,7 @@
 		4855B6D42A4CD95900B77C70 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855B6D32A4CD95900B77C70 /* Weather.swift */; };
 		4855B6D92A4CDBD500B77C70 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855B6D82A4CDBD500B77C70 /* WeatherService.swift */; };
 		4855B6DC2A4CE50200B77C70 /* WeatherSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4855B6DB2A4CE50200B77C70 /* WeatherSearchViewModel.swift */; };
+		487696AA2A847C7C002C0094 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487696A92A847C7C002C0094 /* LocationManager.swift */; };
 		48AE9F0B2A73489600A18752 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F0A2A73489600A18752 /* HeaderView.swift */; };
 		48AE9F0F2A7348C500A18752 /* HourlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F0C2A7348C400A18752 /* HourlyView.swift */; };
 		48AE9F102A7348C500A18752 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE9F0D2A7348C500A18752 /* WeatherView.swift */; };
@@ -42,6 +43,7 @@
 		4855B6D32A4CD95900B77C70 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		4855B6D82A4CDBD500B77C70 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		4855B6DB2A4CE50200B77C70 /* WeatherSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSearchViewModel.swift; sourceTree = "<group>"; };
+		487696A92A847C7C002C0094 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		48AE9F0A2A73489600A18752 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		48AE9F0C2A7348C400A18752 /* HourlyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyView.swift; sourceTree = "<group>"; };
 		48AE9F0D2A7348C500A18752 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		4855B6D72A4CDBAB00B77C70 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				487696A92A847C7C002C0094 /* LocationManager.swift */,
 				4855B6D82A4CDBD500B77C70 /* WeatherService.swift */,
 			);
 			path = Services;
@@ -255,6 +258,7 @@
 			files = (
 				48AE9F112A7348C500A18752 /* DailyView.swift in Sources */,
 				48AE9F102A7348C500A18752 /* WeatherView.swift in Sources */,
+				487696AA2A847C7C002C0094 /* LocationManager.swift in Sources */,
 				4855B6D92A4CDBD500B77C70 /* WeatherService.swift in Sources */,
 				48AE9F182A73491000A18752 /* TemperatureBarView.swift in Sources */,
 				48AE9F0B2A73489600A18752 /* HeaderView.swift in Sources */,
@@ -403,6 +407,8 @@
 				DEVELOPMENT_TEAM = UY7544MY99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to retrieve data";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to retrieve data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +438,8 @@
 				DEVELOPMENT_TEAM = UY7544MY99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "This app needs your location to retrieve data";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to retrieve data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -53,7 +53,7 @@ struct PaginationView: View {
             .padding(.horizontal, 40)
             Spacer()
         }
-        .frame(width: .infinity, height: 100, alignment: .topLeading)
+        .frame(height: 100, alignment: .topLeading)
         .background(Color(hex: "#2773b9")).opacity(0.8)
     }
 }
