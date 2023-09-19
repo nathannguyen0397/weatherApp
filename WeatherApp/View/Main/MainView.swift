@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MainView: View {
-    @State private var showLandView = false
+    @State private var showLandView = true
     @State private var isMapShown = false
     @State private var path = NavigationPath()
     var body: some View {

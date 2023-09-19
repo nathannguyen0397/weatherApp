@@ -194,12 +194,12 @@ struct citySuggestionsView: View {
                             Text(prefix)
                             Text(match).foregroundColor(.white)
                             Text(suffix)
-                                .lineLimit(1)
                         } else {
                             Text(cityStateCountryString)
                         }
                         Spacer()
                     }
+                    .frame(height: 30)
                 }
             }
         }
